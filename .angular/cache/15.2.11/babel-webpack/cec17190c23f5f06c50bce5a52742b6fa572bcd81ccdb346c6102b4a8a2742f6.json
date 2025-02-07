@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class LoginDetails {\n  constructor() {\n    this.UserName = '';\n    this.Password = '';\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
