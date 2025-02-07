@@ -1,0 +1,23 @@
+<ng-container *ngIf="true">
+  <img src="assets/images/meeting/office_meet.jpg" *ngIf="meetingDetails.MeetName.toLowerCase().includes('office')" style="height: 100dvh;" width="100%" alt="" srcset="">
+  <img src="assets/images/meeting/class_meet.jpg" *ngIf="meetingDetails.MeetName.toLowerCase().includes('class')" style="height: 100dvh;" width="100%" alt="" srcset="">
+  <img src="assets/images/meeting/cabin_meet.jpg" *ngIf="meetingDetails.MeetName.toLowerCase().includes('cabin')" style="height: 100dvh;" width="100%" alt="" srcset="">
+  <div style="position: absolute; top: 2%; right: 2%;">
+    <button type="button" class="btn btn-sm  text-white" style="background-color: red;" (click)="leaveMeeting()">
+      <strong>Leave Meet</strong>
+    </button>
+  </div>
+  <div class="flex justify-center w-100">
+    <div class="flex flex-row gap-2" style="max-width: 80dvw; overflow-x: auto; position: absolute; bottom: 0;">
+      <div class="card p-3" style="min-height: 230px; max-height: 230px; min-width: 150px;"
+        *ngFor="let user of userList">
+        <img class="mask mask-heart" src="assets/images/meeting/user_image.png" style="height: 150px !important; width: 150px !important;"/>
+        <div class="flex flex-col">
+          <strong>{{user.FirstName}}</strong>
+          <strong><small>{{user.LastName}}</small></strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-container>
