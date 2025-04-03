@@ -1,45 +1,59 @@
-<video src="assets/videos/videoplayback.mp4" autoplay loop style="position: relative; width: 100% !important;"></video>
+<video src="assets/videos/videoplayback.mp4" autoplay loop
+  style="position: relative; width: 100% !important;"></video>
 <div class="mx-auto" style="position: absolute; top: 0; width: 100%;">
+  <!-- <model-viewer
+    src="assets/character.glb"
+    alt="3D Character"
+    auto-rotate
+    camera-controls
+    style="width: 100%; height: 500px;">
+  </model-viewer> -->
   <div class="flex justify-center items-center" style="min-height: 99dvh;">
     <div class="grid grid-cols-3 gap-3">
       <!-- Intial Screen -->
       <ng-container *ngIf="!meetType">
         <div class="card bg-base-100 image-full w-96 shadow-xl">
           <figure>
-            <img src="assets/images/dashboard/create_new_meet.png" alt="Shoes" />
+            <img src="assets/images/dashboard/create_new_meet.png"
+              alt="Shoes" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">New Meeting</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary" (click)="meetType='new_meet'">Create <i
+              <button class="btn btn-primary"
+                (click)="meetType='new_meet'">Create <i
                   class="bi bi-plus-lg"></i></button>
             </div>
           </div>
         </div>
         <div class="card bg-base-100 image-full w-96 shadow-xl">
           <figure>
-            <img src="assets/images/dashboard/conference.jpg" alt="Conference" />
+            <img src="assets/images/dashboard/conference.jpg"
+              alt="Conference" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Join Conference</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary" (click)="setJoiningMeetDetail('conference','join_meet_form')"><strong>Join
+              <button class="btn btn-primary"
+                (click)="setJoiningMeetDetail('conference','join_meet_form')"><strong>Join
                   <i class="bi bi-person-plus-fill"></i></strong></button>
             </div>
           </div>
         </div>
         <div class="card bg-base-100 image-full w-96 shadow-xl">
           <figure>
-            <img src="assets/images/dashboard/office_cabin_meeting.jpeg" alt="office_cabin_meeting" />
+            <img src="assets/images/dashboard/office_cabin_meeting.jpeg"
+              alt="office_cabin_meeting" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Join Office Cabin meet</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
               <button class="btn btn-primary"
-                (click)="setJoiningMeetDetail('office','join_meet_form')"><strong>Join <i
+                (click)="setJoiningMeetDetail('office','join_meet_form')"><strong>Join
+                  <i
                     class="bi bi-person-plus-fill"></i></strong></button>
             </div>
           </div>
@@ -52,7 +66,9 @@
             <h2 class="card-title">Join Class</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary" (click)="setJoiningMeetDetail('class','join_meet_form')"><strong>Join <i
+              <button class="btn btn-primary"
+                (click)="setJoiningMeetDetail('class','join_meet_form')"><strong>Join
+                  <i
                     class="bi bi-person-plus-fill"></i></strong></button>
             </div>
           </div>
@@ -62,8 +78,11 @@
 
       <!-- New Meet Screen -->
       <ng-container *ngIf="meetType === 'new_meet'">
-        <div class="flex justify-between" style="position: absolute; top: 0; padding-top: 30vh;">
-          <a (click)="meetType = ''" style="cursor: pointer; color: red; font-weight: 700;">Back to main screen</a>
+        <div class="flex justify-between"
+          style="position: absolute; top: 0; padding-top: 30vh;">
+          <a (click)="meetType = ''"
+            style="cursor: pointer; color: red; font-weight: 700;">Back to main
+            screen</a>
         </div>
         <div class="card bg-base-100 image-full w-96 shadow-xl">
           <figure>
@@ -73,7 +92,9 @@
             <h2 class="card-title">Conference Meet</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary" (click)="setNewMeetDetail('conference','new_meet_form')">Create <i
+              <button class="btn btn-primary"
+                (click)="setNewMeetDetail('conference','new_meet_form')">Create
+                <i
                   class="bi bi-plus-lg"></i></button>
             </div>
           </div>
@@ -86,20 +107,23 @@
             <h2 class="card-title">Class Meet</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary" (click)="setNewMeetDetail('class','new_meet_form')">Create <i
+              <button class="btn btn-primary"
+                (click)="setNewMeetDetail('class','new_meet_form')">Create <i
                   class="bi bi-plus-lg"></i></button>
             </div>
           </div>
         </div>
         <div class="card bg-base-100 image-full w-96 shadow-xl">
           <figure>
-            <img src="assets/images/dashboard/office_cabin_meeting.jpeg" alt="office_cabin_meeting" />
+            <img src="assets/images/dashboard/office_cabin_meeting.jpeg"
+              alt="office_cabin_meeting" />
           </figure>
           <div class="card-body">
             <h2 class="card-title">Office Cabin meet</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary" (click)="setNewMeetDetail('Office','new_meet_form')">Create <i
+              <button class="btn btn-primary"
+                (click)="setNewMeetDetail('Office','new_meet_form')">Create <i
                   class="bi bi-plus-lg"></i></button>
             </div>
           </div>
@@ -115,35 +139,45 @@
             <img src="assets/images/dashboard/conference.jpg" alt="Shoes" />
           </figure> -->
           <div class="flex justify-between">
-            <a (click)="meetType = 'new_meet'" style="color: red; cursor: pointer; padding: 10px;">Back to meeting screen</a>
+            <a (click)="meetType = 'new_meet'"
+              style="color: red; cursor: pointer; padding: 10px;">Back to
+              meeting screen</a>
 
           </div>
           <div class="card-body">
             <h2 class="card-title">{{creatingMeetType | uppercase}} MEET</h2>
-            <label class="input input-bordered flex items-center gap-2 position-relative">
+            <label
+              class="input input-bordered flex items-center gap-2 position-relative">
               <strong>Code</strong>
-              <input type="text" class="grow" placeholder="Daisy" readonly [value]="newMeetGeneratedCode" />
-              <button class="btn btn-ghost" style="position: absolute; right: 0%; top: 0%;"
-                (click)="copyCode_Clipboard()"><i class="bi bi-link-45deg"></i> <strong>{{isCopied ? 'Copied' :
+              <input type="text" class="grow" placeholder="Daisy" readonly
+                [value]="newMeetGeneratedCode" />
+              <button class="btn btn-ghost"
+                style="position: absolute; right: 0%; top: 0%;"
+                (click)="copyCode_Clipboard()"><i class="bi bi-link-45deg"></i>
+                <strong>{{isCopied ? 'Copied' :
                   'Copy'}}</strong></button>
             </label>
             <label class="form-control w-full max-w-xs w-100">
               <div class="label">
-                <span class="label-text"><strong>Candidate Limit?</strong></span>
+                <span class="label-text"><strong>Candidate
+                    Limit?</strong></span>
               </div>
-              <input type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs w-100"
+              <input type="number" placeholder="Type here"
+                class="input input-bordered w-full max-w-xs w-100"
                 [(ngModel)]="newMeetDetail.MeetCandidateQuantity" />
             </label>
             <label class="form-control w-full max-w-xs w-100">
               <div class="label">
                 <span class="label-text"><strong>Meeting Date?</strong></span>
               </div>
-              <input type="datetime-local" placeholder="Type here" class="input input-bordered w-full max-w-xs w-100"
+              <input type="datetime-local" placeholder="Type here"
+                class="input input-bordered w-full max-w-xs w-100"
                 [(ngModel)]="newMeetDetail.MeetDateTime" />
 
             </label>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary" (click)="createMeet()">Create <i class="bi bi-plus-lg"></i></button>
+              <button class="btn btn-primary" (click)="createMeet()">Create <i
+                  class="bi bi-plus-lg"></i></button>
             </div>
           </div>
         </div>
@@ -158,7 +192,8 @@
           </figure> -->
           <div class="card-body text-center">
             <div class="flex flex-row justify-between">
-              <button type="button" class="btn btn-sm btn-primary" (click)="meetType = ''">
+              <button type="button" class="btn btn-sm btn-primary"
+                (click)="meetType = ''">
                 <strong>Back</strong>
               </button>
               <h2 class="card-title">{{joiningMeetType | uppercase}} MEET</h2>
@@ -168,15 +203,18 @@
               <div class="label">
                 <span class="label-text"><strong>First Name</strong></span>
               </div>
-              <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs w-100"
+              <input type="text" placeholder="Type here"
+                class="input input-bordered w-full max-w-xs w-100"
                 [(ngModel)]="joiningUserDetail.FirstName" />
             </label>
             <label class="form-control w-full max-w-xs w-100">
               <div class="label">
                 <span class="label-text"><strong>Last Name</strong></span>
               </div>
-              <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs w-100"
-                [(ngModel)]="joiningUserDetail.LastName" [disabled]="!joiningUserDetail.FirstName" />
+              <input type="text" placeholder="Type here"
+                class="input input-bordered w-full max-w-xs w-100"
+                [(ngModel)]="joiningUserDetail.LastName"
+                [disabled]="!joiningUserDetail.FirstName" />
             </label>
             <label class="form-control w-full max-w-xs w-100"
               (keyup)="getUserActiveSessionDetail(userContactNoEle.value)">
@@ -184,19 +222,26 @@
                 <span class="label-text"><strong>Contact Number</strong></span>
               </div>
               <input #userContactNoEle type="number" placeholder="Type here"
-                class="input input-bordered w-full max-w-xs w-100" minlength="10" maxlength="10"
-                [(ngModel)]="joiningUserDetail.ConatctNo" [disabled]="!joiningUserDetail.LastName" />
+                class="input input-bordered w-full max-w-xs w-100"
+                minlength="10" maxlength="10"
+                [(ngModel)]="joiningUserDetail.ConatctNo"
+                [disabled]="!joiningUserDetail.LastName" />
               <div class="label">
-                <span class="label-text" style="color: red;"><strong><small>Make sure to enter correct contact
+                <span class="label-text" style="color: red;"><strong><small>Make
+                      sure to enter correct contact
                       number.</small></strong></span>
               </div>
             </label>
-            <label class="input input-bordered flex items-center gap-2 position-relative">
+            <label
+              class="input input-bordered flex items-center gap-2 position-relative">
               <strong>Meet Code</strong>
-              <input type="text" class="grow" placeholder="Enter meet code" [(ngModel)]="joiningUserDetail.MeetCode"
+              <input type="text" class="grow" placeholder="Enter meet code"
+                [(ngModel)]="joiningUserDetail.MeetCode"
                 [disabled]="userContactNoEle.value.length !== 10" />
-              <div class="label" *ngIf="!isNewUserSession && userContactNoEle.value.length === 10">
-                <span class="label-text" style="color: red;"><strong><small>You are already part of
+              <div class="label"
+                *ngIf="!isNewUserSession && userContactNoEle.value.length === 10">
+                <span class="label-text" style="color: red;"><strong><small>You
+                      are already part of
                       meet.</small></strong></span>
               </div>
               <!-- <button class="btn btn-ghost" style="position: absolute; right: 0%; top: 0%;"
@@ -205,7 +250,8 @@
             </label>
             <small
               *ngIf="!joiningUserDetail.FirstName && !joiningUserDetail.LastName && !joiningUserDetail.ConatctNo && !joiningUserDetail.MeetCode"
-              style="color: red;"><i><strong>Please fill up entire details to start meet.</strong></i></small>
+              style="color: red;"><i><strong>Please fill up entire details to
+                  start meet.</strong></i></small>
             <div class="card-actions justify-end">
               <button
                 [disabled]="(!joiningUserDetail.FirstName || !joiningUserDetail.LastName || !joiningUserDetail.ConatctNo) && !joiningUserDetail.MeetCode.length && !isNewUserSession"
@@ -224,18 +270,18 @@
               style="width:175px;height:175px;transform:translate3d(0,0,0);content-visibility:visible"
               viewBox="0 0 430 430">
               <defs>
-                <clipPath id="a">
+                <clippath id="a">
                   <path d="M0 0h430v430H0z" />
-                </clipPath>
-                <clipPath id="d">
+                </clippath>
+                <clippath id="d">
                   <path d="M0 0h430v430H0z" />
-                </clipPath>
-                <clipPath id="c">
+                </clippath>
+                <clippath id="c">
                   <path d="M0 0h430v430H0z" />
-                </clipPath>
-                <clipPath id="b">
+                </clippath>
+                <clippath id="b">
                   <path d="M0 0h430v430H0z" />
-                </clipPath>
+                </clippath>
               </defs>
               <g clip-path="url(#a)">
                 <g clip-path="url(#b)" style="display:none">
@@ -249,7 +295,8 @@
                       class="primary" />
                     <path fill-opacity=".5"
                       d="m-42.508 24.822.043-.043v119.009a3 3 0 0 1-2.164-.879L-185.344 2.195a3 3 0 0 1 0-4.243l55.862-55.861a3 3 0 0 1 4.242-.001z"
-                      class="primary" style="mix-blend-mode:multiply" transform="translate(217.457 210.03)" />
+                      class="primary" style="mix-blend-mode:multiply"
+                      transform="translate(217.457 210.03)" />
                   </g>
                   <g style="display:block">
                     <path
@@ -257,7 +304,8 @@
                       class="primary" />
                     <path fill-opacity=".5"
                       d="m-42.508 24.822.043-.043v119.009a3 3 0 0 1-2.164-.879L-185.344 2.195a3 3 0 0 1 0-4.243l55.862-55.861a3 3 0 0 1 4.242-.001z"
-                      class="primary" style="mix-blend-mode:multiply" transform="translate(217.457 210.03)" />
+                      class="primary" style="mix-blend-mode:multiply"
+                      transform="translate(217.457 210.03)" />
                   </g>
                 </g>
                 <g clip-path="url(#d)" style="display:none">
@@ -271,12 +319,15 @@
             <h2 class="card-title">Meeting has been created succesfully.</h2>
             <p>Now, you can share meet details with your friends.</p>
             <div class="card-actions">
-              <button class="btn btn-ghost"><i class="bi bi-link-45deg"></i> <strong>Copy Details</strong></button>
+              <button class="btn btn-ghost"><i class="bi bi-link-45deg"></i>
+                <strong>Copy Details</strong></button>
             </div>
             <div class="card-actions flex flex-row">
-              <button class="btn btn-success text-white" (click)="navigate_MeetingScreen()"><strong>Join
+              <button class="btn btn-success text-white"
+                (click)="navigate_MeetingScreen()"><strong>Join
                   Meet</strong></button>
-              <button class="btn btn-primary" (click)="reset()"><strong>Back</strong></button>
+              <button class="btn btn-primary"
+                (click)="reset()"><strong>Back</strong></button>
             </div>
           </div>
         </div>
