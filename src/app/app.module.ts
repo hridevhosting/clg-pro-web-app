@@ -9,10 +9,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginModule } from './@core/components/login/login.module';
 import { DashboardModule } from './@core/components/dashboard/dashboard.module';
 import { MeetingsModule } from './@core/components/meetings/meetings.module';
+import { CabinMeetingComponent } from './@core/components/cabin-meeting/cabin-meeting.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CabinMeetingComponent
   ],
   imports: [
     CommonModule,

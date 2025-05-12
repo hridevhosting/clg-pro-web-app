@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class UserDetail {\n  constructor() {\n    this.FirstName = '';\n    this.LastName = '';\n    this.ConatctNo = '';\n    this.MeetJoiningDate = '';\n    this.MeetCode = '';\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

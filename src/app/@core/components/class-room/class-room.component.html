@@ -1,0 +1,14 @@
+<!-- <div #canvasContainer></div> -->
+<!-- <canvas #canvas></canvas> -->
+<!-- <div id="canvas-container" style="width: 100vw; height: 100vh;"></div> -->
+<!-- <div id="canvas-container" style="width: 100vw; height: 100vh; margin: 0; padding: 0; overflow: hidden;"></div> -->
+<div id="canvas-container" style="width: 100vw; height: 100vh; margin: 0; padding: 0; overflow: hidden; position: relative;">
+  <div id="info-card" class="info-card" #infoCard>
+    <div class="info-content">
+      <h3>{{ selectedPersonName }}</h3>
+      <p>Age: {{ selectedPersonAge }}</p>
+      <p>Favorite Subject: {{ selectedPersonSubject }}</p>
+      <button (click)="closeInfoCard()">Close</button>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class NewMeetDetail {\n  constructor() {\n    this.MeetName = '';\n    this.MeetDateTime = '';\n    this.MeetCandidateQuantity = '';\n    this.MeetCode = '';\n    // MeetType: string = '';\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

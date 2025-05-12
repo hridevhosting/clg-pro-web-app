@@ -1,4 +1,4 @@
-export class UserDetail {
+export class SeatDetail {
   FirstName: string = '';
   LastName: string = '';
   ConatctNo: string = '';

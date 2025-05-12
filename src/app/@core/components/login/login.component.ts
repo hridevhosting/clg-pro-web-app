@@ -36,6 +36,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  direct_JoinMeet() {
+    this._router.navigate(['dashboard'], { queryParams: { redirect: 'DirectJoinMeet' } })
+  }
+
   newUser: NewUser = new NewUser();
   createNewUser() {
     let _date = new Date();

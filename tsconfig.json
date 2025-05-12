@@ -6,6 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "esModuleInterop": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -22,7 +23,13 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "skipLibCheck": true,
+    "paths": {
+      "three": ["node_modules/three"],
+      "three/examples/jsm/controls/*": ["node_modules/@types/three/examples/jsm/controls/*"]
+    },
+    "types": ["three"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

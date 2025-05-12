@@ -1,8 +1,8 @@
 <div class="container mx-auto" *ngIf="isExistingUser">
   <div class="flex justify-center items-center" style="height: 99dvh;">
-    <div class="card lg:card-side bg-base-100 shadow-xl">
+    <div class="card lg:card-side bg-base-100 shadow-xl flex flex-row gap-2">
       <figure>
-        <img src="assets/images/icon.png" style="height: 500px !important;" alt="Album" />
+        <img src="assets/images/icon.png" style="height: 550px !important;" alt="Album" />
       </figure>
       <div class="card-body">
         <h2 class="card-title font-extrabold">Login</h2>
@@ -30,6 +30,9 @@
         <div class="card-actions justify-center mt-10">
           <button class="btn btn-primary text-white" (click)="isExistingUser = false"><strong>Create New
               User</strong></button>
+        </div>
+        <div class="card-actions justify-center mt-3">
+          <button class="btn" style="background-color: #FFCF50 !important;" (click)="direct_JoinMeet()"><strong>Join Meet</strong></button>
         </div>
       </div>
     </div>

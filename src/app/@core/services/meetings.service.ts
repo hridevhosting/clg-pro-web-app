@@ -18,8 +18,9 @@ export class MeetingsService {
     return _meetDetail ? JSON.parse(_meetDetail) : null;
   }
 
-  joinMeet(_userDetail: UserDetail) {
-    localStorage.setItem('user_' + _userDetail.ConatctNo + '_' + _userDetail.MeetCode, JSON.stringify(_userDetail));
+  joinMeet(_userDetail: UserDetail, isMeetHost?: boolean) {
+    _userDetail.MeetJoiningDate = new Date().toString();
+    localStorage.setItem('user_' + _userDetail.ConatctNo + '_' + _userDetail.MeetCode + '_NewRequest' + (isMeetHost ? '_MeetHoster' : ''), JSON.stringify(_userDetail));
   }
 
   getUserDetailByContactNo(_contactNo: string) {

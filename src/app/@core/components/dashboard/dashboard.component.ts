@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewMeetDetail } from 'src/app/shared/modals/newMeetDetail';
 import { MeetingsService } from '../../services/meetings.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserDetail } from 'src/app/shared/modals/userDetail';
 
 @Component({
@@ -13,14 +13,28 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private _meetingServices: MeetingsService,
-    private _router: Router
+    private _router: Router,
+    private _actRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     let _user = localStorage.getItem('user%')
     console.log(_user);
+    this._actRoute.queryParams.subscribe(
+      (res: any) => {
+        console.log("QueryParam=>", res);
+        if (res) {
+          if (res['redirect']) {
+            if (res['redirect'] === 'DirectJoinMeet') {
+              this.isRedirectedDirectJoinMeet = true;
+            }
+          }
+        }
+      }
+    )
   }
 
+  isRedirectedDirectJoinMeet: boolean = false;
   meetType: string = '';
   creatingMeetType: string = '';
   joiningMeetType: string = '';
@@ -90,12 +104,17 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  joinMeet() {
+  joinMeet(isHostJoining?: boolean) {
     debugger
 
     if (this.verifyMeetTimeDate(this.joiningUserDetail.MeetCode) && this.checkIsMeet_Exist(this.joiningUserDetail.MeetCode) && this._meetingServices.checkUserCount_InMeeting(this.joiningUserDetail.MeetCode)) {
-      this._meetingServices.joinMeet(this.joiningUserDetail);
-      this._router.navigate(['meeting'], { queryParams: { meetId: this.joiningUserDetail.MeetCode, userId: this.joiningUserDetail.ConatctNo } })
+      this._meetingServices.joinMeet(this.joiningUserDetail, isHostJoining || false);
+      if (this.creatingMeetType.toLowerCase().includes('class') || this.creatingMeetType.toLowerCase().includes('class')) {
+        this._router.navigate(['class-room'], { queryParams: { meetId: this.joiningUserDetail.MeetCode, userId: this.joiningUserDetail.ConatctNo } })
+      }
+      if (this.creatingMeetType.toLowerCase().includes('office') || this.creatingMeetType.toLowerCase().includes('office')) {
+        this._router.navigate(['cabin-meeting'], { queryParams: { meetId: this.joiningUserDetail.MeetCode, userId: this.joiningUserDetail.ConatctNo } })
+      }
     } else {
       alert('Please check meeting date time!');
     }
@@ -167,8 +186,13 @@ export class DashboardComponent implements OnInit {
         this.joiningUserDetail.FirstName = _user.FirstName;
         this.joiningUserDetail.LastName = _user.LastName;
         this.joiningUserDetail.MeetCode = this.newMeetGeneratedCode;
-        this._meetingServices.joinMeet(this.joiningUserDetail);
-        this._router.navigate(['meeting'], { queryParams: { meetId: this.newMeetGeneratedCode, userId: this.joiningUserDetail.ConatctNo } })
+        this._meetingServices.joinMeet(this.joiningUserDetail, true);
+        if (this.creatingMeetType.toLowerCase().includes('class') || this.creatingMeetType.toLowerCase().includes('class')) {
+          this._router.navigate(['class-room'], { queryParams: { meetId: this.joiningUserDetail.MeetCode, userId: this.joiningUserDetail.ConatctNo } })
+        }
+        if (this.creatingMeetType.toLowerCase().includes('office') || this.creatingMeetType.toLowerCase().includes('office')) {
+          this._router.navigate(['cabin-meeting'], { queryParams: { meetId: this.joiningUserDetail.MeetCode, userId: this.joiningUserDetail.ConatctNo } })
+        }
       }
       else {
         alert('Please try agin after few min..!');
